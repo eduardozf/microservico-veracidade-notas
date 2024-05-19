@@ -1,0 +1,3 @@
+/node_modules
+/src/tests/*.json
+/src/tests/*.html

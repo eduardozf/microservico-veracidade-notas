@@ -1,0 +1,22 @@
+{
+  "name": "microservico-veracidade-notas",
+  "version": "1.0.0",
+  "description": "Validate invoices",
+  "main": "server.js",
+  "repository": "https://github.com/eduardozf/microservico-veracidade-notas.git",
+  "author": "EduardoZF <eduardozf1@gmail.com>",
+  "private": false,
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test:load": "artillery run src/tests/load.artillery.yml",
+    "test:load:json": "artillery run src/tests/load.artillery.yml --output src/tests/report.json",
+    "test:load:html": "artillery report src/tests/report.json --output src/tests/report.html",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
