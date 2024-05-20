@@ -4,7 +4,7 @@ class ValidationService {
   validate(issuer) {
     const { madeiraMadeira } = validationConfig.companies;
 
-    return issuer == madeiraMadeira.CNPJ;
+    return issuer === madeiraMadeira.CNPJ;
   }
 }
 
