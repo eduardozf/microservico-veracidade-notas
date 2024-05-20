@@ -9,14 +9,15 @@
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
-    "test:load": "artillery run src/tests/load.artillery.yml",
-    "test:load:json": "artillery run src/tests/load.artillery.yml --output src/tests/report.json",
-    "test:load:html": "artillery report src/tests/report.json --output src/tests/report.html",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js --es-module-specifier-resolution=node",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
     "express": "^4.19.2",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

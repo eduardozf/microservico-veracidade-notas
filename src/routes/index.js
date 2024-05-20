@@ -1,20 +1,10 @@
 import { Router } from "express";
+import ValidationController from "../controllers/ValidateController.js";
+const controller = new ValidationController();
 
 const router = Router();
 
-// Default Route
-router.get("/", (_, response) => response.send("Server is running"));
-
-// Validates NFe by company CPF
-router.post("/valida", (request, response) => {
-  const issuer = request?.body?.issuer || "";
-  const compareWith = "10490181000135";
-
-  const CNPJ = issuer.replace(/[^a-zA-Z0-9 ]/g, "");
-
-  const valid = CNPJ == compareWith;
-
-  return response.send(valid);
-});
+// Validates NFe by company CNPJ
+router.post("/valida", controller.validate);
 
 export default router;
